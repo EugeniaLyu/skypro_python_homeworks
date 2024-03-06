@@ -1,5 +1,10 @@
+import math
 
-def square(x):
-    print(x*x) 
 
-square(int(input("Укажите сторону квадрата: ")))
+def square():
+    s = float(input("Введи число: "))
+    s = math.ceil(s * s)
+    print("Площадь квадрата равна:", s)
+
+
+square()
