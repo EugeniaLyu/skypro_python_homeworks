@@ -1,0 +1,7 @@
+from smartphone import Smartphone
+user1 = Smartphone("Apple", "11", "+79217850230")
+user2 = Smartphone("Xiaomi", "Poco X4 Pro 5G", "+79112224792")
+user3 = Smartphone("Samsung", "Galaxy A54 5G", "+79523385630")
+user4 = Smartphone("Infinix", "Note 30 Pro(X678B)", "+79217850230")
+user5 = Smartphone("Huawei", "Nova Y91(51097LTU)", "+79217850230")
+catalog = [user1.sayUser(), user2.sayUser(), user3.sayUser(), user4.sayUser(), user5.sayUser()]
