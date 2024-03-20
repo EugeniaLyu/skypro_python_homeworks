@@ -1,0 +1,44 @@
+def capitilize(self, string: str) -> str:
+        """
+        Принимает на вход текст, делает первую букву заглавной и возвращает этот же текст
+        Пример: `capitilize("skypro") -> "Skypro"`
+        """
+        return string.capitalize()
+
+# В ф-ции не прописано условие, как должна реагировать сис-ма при пустых строках, также как и при наличии текста? А если в тексте будут присутствовать аббревиатура, имена собственные?
+
+
+def contains(self, string: str, symbol: str) -> bool:
+        """
+        Возвращает `True`, если строка содержит искомый символ и `False` - если нет \n 
+        Параметры: \n 
+            `string` - строка для обработки \n
+            `symbol` - искомый символ \n
+        Пример 1: `contains("SkyPro", "S") -> True`
+        Пример 2: `contains("SkyPro", "U") -> False`
+        """
+        res = False
+        try:
+            res = string.index(symbol) > -1
+        except ValueError:
+            pass
+
+        return res
+
+# Не закончен код с результатом False и True
+
+
+     def delete_symbol(self, string: str, symbol: str) -> str:
+        """
+        Удаляет все подстроки из переданной строки \n 
+        Параметры: \n 
+            `string` - строка для обработки \n
+            `symbol` - искомый символ для удаления \n
+        Пример 1: `delete_symbol("SkyPro", "k") -> "SyPro"`
+        Пример 2: `delete_symbol("SkyPro", "Pro") -> "Sky"`
+        """
+        if(self.contains(string, symbol)):
+            string = string.replace(symbol, "")    
+        return string
+
+# Не завершен метод def contains(self, string: str, symbol: str) -> bool:, поэтому данная ф-ция не будет работать
