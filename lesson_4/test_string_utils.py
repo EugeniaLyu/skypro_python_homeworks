@@ -11,13 +11,6 @@ def test_capitilize_positive(string, result):
 @pytest.mark.xfail
 def test_capitilize_negative1():
     string_utils = StringUtils()
-    res = string_utils.capitilize('анна-Мария')
-    assert res == 'Анна-Мария'
-
-
-@pytest.mark.xfail
-def test_capitilize_negative2():
-    string_utils = StringUtils()
     res = string_utils.capitilize('1406')
     assert res == '1406'
 
@@ -84,23 +77,31 @@ def test_to_list_negative2():
     assert res == None
 
 
-# @pytest.mark.parametrize('string, symbols, result', [('Евгения', 'Е', True), ('Евгения', 'Г', False)])
-# def test_contains_positive(string, symbol, result):
-#     string_utils = StringUtils()
-#     res = string_utils.contains(string, symbol)
-#     assert res == result
+@pytest.mark.parametrize('string, symbol, result', [('Евгения', 'г', True), ('Евгения', 'а', False)])
+def test_contains_positive(string, symbol, result):
+     string_utils = StringUtils()
+     res = string_utils.contains(string, symbol)
+     assert res == result
 
-# @pytest.mark.parametrize('string, symbols, result', [('', '', ), (1406, 1), (None, None)])
-# def test_contains_negative(string, symbols, result):
-#     string_utils = StringUtils()
-#     res = string_utils.contains(string, symbols)
-#     assert res == result
 
-# @pytest.mark.parametrize('string, symbols, result', [('Евгенyия', 'y', ''Евгения), ('Евгенияния', 'ния', 'Евгения')])
-# def test_delete_symbol_positive(string, symbols, result):
-    # string_utils = StringUtils()
-#     res = string_utils.contains(string, symbols)
-#     assert res == result
+@pytest.mark.xfail
+def test_contains_negative1():
+     string_utils = StringUtils()
+     res = string_utils.contains(1406, 1)
+     assert res == True
+
+
+@pytest.mark.xfail
+def test_contains_negative2():
+     string_utils = StringUtils()
+     res = string_utils.contains(None, None)
+     assert res == True
+
+@pytest.mark.parametrize('string, symbols, result', [('Евгенyия', 'у', 'Евгения'), ('Евгенияния', 'ния', 'Евгения')])
+def test_delete_symbol_positive(string, symbols, result):
+    string_utils = StringUtils()     
+    res = string_utils.contains(string, symbols)
+    assert res == result
 
 @pytest.mark.parametrize('string, symbol, result', [('Евгения', 'Е', True), ('Евгения', 'Я', False)])
 def test_starts_with_positive(string, symbol, result):
