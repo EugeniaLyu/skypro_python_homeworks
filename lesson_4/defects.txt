@@ -1,0 +1,23 @@
+def capitilize(self, string: str) -> str:
+        """
+        Принимает на вход текст, делает первую букву заглавной и возвращает этот же текст
+        Пример: `capitilize("skypro") -> "Skypro"`
+        """
+        return string.capitalize()
+
+# В ф-ции не прописано условие, как должна реагировать сис-ма при пустых строках, также как и при наличии текста? А если в тексте будут присутствовать аббревиатура, имена собственные?
+
+     def delete_symbol(self, string: str, symbol: str) -> str:
+        """
+        Удаляет все подстроки из переданной строки \n 
+        Параметры: \n 
+            `string` - строка для обработки \n
+            `symbol` - искомый символ для удаления \n
+        Пример 1: `delete_symbol("SkyPro", "k") -> "SyPro"`
+        Пример 2: `delete_symbol("SkyPro", "Pro") -> "Sky"`
+        """
+        if(self.contains(string, symbol)):
+            string = string.replace(symbol, "")    
+        return string
+
+# Метод не работает
