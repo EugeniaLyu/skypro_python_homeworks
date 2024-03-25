@@ -14,11 +14,14 @@ driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install())
 
 driver.get("http://uitestingplayground.com/classattr") 
 sleep(1)
-driver.find_element(By.CSS_SELECTOR, 'button.btn.class3').click()
-
+for button in range(1, 4):  
+    driver.find_element(By.CSS_SELECTOR, 'button.btn.class3').click()
+sleep(1)
 
 driver = webdriver.Firefox(service=FirefoxService(GeckoDriverManager().install()))
 
 driver.get("http://uitestingplayground.com/classattr") 
 sleep(1)
-driver.find_element(By.CSS_SELECTOR, 'button.btn.class3').click()
+for button in range(1, 4):  
+    driver.find_element(By.CSS_SELECTOR, 'button.btn.class3').click()
+sleep(1)
