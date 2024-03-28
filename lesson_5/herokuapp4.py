@@ -9,6 +9,7 @@ from webdriver_manager.firefox import GeckoDriverManager
 
 from selenium.webdriver.common.by import By
 
+# Форма авторизации(Chrome)
 driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))
 
 driver.get("https://the-internet.herokuapp.com/login") 
@@ -28,7 +29,7 @@ sleep(1)
 driver.find_element(By.CSS_SELECTOR, 'button.radius').click()
 sleep(1)
 
-
+# Форма авторизации(Firefox)
 driver = webdriver.Firefox(service=FirefoxService(GeckoDriverManager().install()))
 
 driver.get("https://the-internet.herokuapp.com/login") 
@@ -47,3 +48,4 @@ sleep(1)
 
 driver.find_element(By.CSS_SELECTOR, 'button.radius').click()
 sleep(1)
+driver.quit()

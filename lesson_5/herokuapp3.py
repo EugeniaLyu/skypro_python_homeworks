@@ -9,6 +9,7 @@ from webdriver_manager.firefox import GeckoDriverManager
 
 from selenium.webdriver.common.by import By
 
+# Поле ввода(Chrome)
 driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))
 
 driver.get("https://the-internet.herokuapp.com/inputs")
@@ -23,6 +24,7 @@ sleep(1)
 search_input.send_keys("999")
 sleep(1)
 
+# Поле ввода(Firefox)
 driver = webdriver.Firefox(service=FirefoxService(GeckoDriverManager().install()))
 
 driver.get("https://the-internet.herokuapp.com/inputs")
@@ -36,3 +38,4 @@ search_input.clear()
 sleep(1)
 search_input.send_keys("999")
 sleep(1)
+driver.quit()
